@@ -41,7 +41,7 @@ Route::get('/country', function(){
 });
 
 Route::get('/has-many', 'RelationController@index');
-
+Route::get('/order', 'RelationController@order');
 
 Auth::routes();
 
@@ -80,6 +80,7 @@ Route::get('posts/edit/{id}','Postcontroller@edit')->name('posts.edit');
 Route::delete('posts/destroy/{id}','Postcontroller@destroy')->name('posts.destroy');
 //Route::get('/product/{id}', 'TestController@product');
 Route::get('/product', 'TestController@product');
+
 
 
 

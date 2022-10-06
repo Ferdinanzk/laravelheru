@@ -50,4 +50,7 @@ class User extends Authenticatable
     public function content(){
         return $this->hasmany(Content::Class);
     }
+    public function order(){
+        return $this->hasmany(Order::class);
+    }
 }

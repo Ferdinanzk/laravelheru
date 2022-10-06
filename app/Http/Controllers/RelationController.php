@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Content;
 use App\Models\User;
+use App\Models\Order;
 
 
 use Illuminate\Http\Request;
@@ -20,4 +21,18 @@ class RelationController extends Controller
 
         return view('relation.index',compact('content'));
     }
+
+    public function order(){
+
+        // $product =  new Order;
+        // $product->user_id="2";
+        // $product->product="Orange";
+        // $product->save();
+
+        $order = User::find(1)->order;
+
+        return view('relation.index',compact('order'));
+
+    }
+
 }
