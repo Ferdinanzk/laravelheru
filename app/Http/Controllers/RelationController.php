@@ -34,7 +34,8 @@ class RelationController extends Controller
         // $content->tags()->attach([$tag1,$tag2,$tag3]);
 
         $contents = Content::with('tags')->get();
-        return ($contents);
+        // return ($contents);
+        return view('relation.index',compact('contents'));
 
     }
 
