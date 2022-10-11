@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use App\Models\User;
 use App\Models\Order;
-use App\Models\Tags;
+use App\Models\Tag;
 
 
 use Illuminate\Http\Request;
