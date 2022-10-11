@@ -13,4 +13,9 @@ class Content extends Model
     public function user(){
         return $this->belongsto(User::class);
     }
+    
+    public function tags(){
+        return $this->belongstomany(Tag::class);
+    }
+
 }

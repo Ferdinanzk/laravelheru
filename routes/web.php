@@ -42,6 +42,7 @@ Route::get('/country', function(){
 
 Route::get('/has-many', 'RelationController@index');
 Route::get('/order', 'RelationController@order');
+Route::get('many-to-many','RelationController@index');
 
 Auth::routes();
 
