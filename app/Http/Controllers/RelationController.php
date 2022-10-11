@@ -21,17 +21,20 @@ class RelationController extends Controller
         // $content = User::find(1)->content;
 
         // return view('relation.index',compact('content'));
-        $content = new Content;
-        $content->user_id=1;
-        $content->name='ini postingan user 3 By User ID=1';
-        $content->save();
+        // $content = new Content;
+        // $content->user_id=1;
+        // $content->name='ini postingan user 3 By User ID=1';
+        // $content->save();
 
-        // $tag = Tag::find(1);
-        $tag1=1;
-        $tag2=2;
-        $tag3=3;
+        // // $tag = Tag::find(1);
+        //  $tag1=1;
+        //  $tag2=2;
+        //  $tag3=3;
 
-        $content->tags()->attach([$tag1,$tag2,$tag3]);
+        // $content->tags()->attach([$tag1,$tag2,$tag3]);
+
+        $contents = Content::with('tags')->get();
+        return ($contents);
 
     }
 
