@@ -1,3 +1,9 @@
-@foreach ($order as $a)
-<P> {{$a->product}} dibeli oleh  {{$a->user->name}} </p> 
+@foreach ($contents as $a)
+<P> {{$a->name}} </p> Tags:
+<!-- panggilan $a bisa berlanjut 
+ke panggilan tag -->
+@foreach ($a->tags as $b)
+{{$b->name}}, 
+@endforeach
+<hr>
 @endforeach
