@@ -5,6 +5,9 @@ use App\Models\Content;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Tag;
+use App\Models\Mahkuliah;
+use App\Models\Matkuliah;
+
 
 
 use Illuminate\Http\Request;
@@ -51,5 +54,19 @@ class RelationController extends Controller
         return view('relation.index',compact('order'));
 
     }
+  
+    public function mahasiswa(){
+        // $a = Mahkuliah::find(3);
+        // $b1 = 1;
+        // $b2 = 2;
+        // $b3 = 3;
+        // $b4 = 4;
+        // $b5 = 5;
+        // $a->matkuliahs()->attach([$b1,$b2,$b3,$b4,$b5]);
+
+        $baca = Matkuliah::with('mahkuliahs')->get();
+        return view('relation.mahasiswa',compact('baca'));
+    }
+
 
 }

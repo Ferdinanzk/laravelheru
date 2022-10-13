@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMahasiswaMatakuliahTable extends Migration
+class CreateMahkuliahMatkuliahTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateMahasiswaMatakuliahTable extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswa_matakuliah', function (Blueprint $table) {
+        Schema::create('mahkuliah_matkuliah', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('mahasiswa_id')->constrained()->onDelete('cascade');
-            $table->foreignId('matakuliah_id')->constrained()->onDelete('cascade');
+            $table->integer('mahkuliah_id');
+            $table->integer('matkuliah_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateMahasiswaMatakuliahTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswa_matakuliah');
+        Schema::dropIfExists('mahkuliah_matkuliah');
     }
 }
